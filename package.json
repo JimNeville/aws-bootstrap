@@ -1,0 +1,20 @@
+{
+  "name": "aws-bootstrap",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JimNeville/aws-bootstrap.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JimNeville/aws-bootstrap/issues"
+  },
+  "homepage": "https://github.com/JimNeville/aws-bootstrap#readme"
+}
