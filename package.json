@@ -2,19 +2,13 @@
   "name": "aws-bootstrap",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./node_modules/pm2/bin/pm2 start ./server.js --name hello_aws --log ../logs/app.log ",
+    "stop": "node ./node_modules/pm2/bin/pm2 stop hello_aws",
+    "build": "echo 'Building...'"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/JimNeville/aws-bootstrap.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/JimNeville/aws-bootstrap/issues"
-  },
-  "homepage": "https://github.com/JimNeville/aws-bootstrap#readme"
+  "dependencies": {
+    "pm2": "^4.2.0"
+  }
 }
