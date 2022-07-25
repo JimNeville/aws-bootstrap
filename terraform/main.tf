@@ -74,7 +74,7 @@ resource "aws_instance" "app_server" {
   iam_instance_profile = aws_iam_instance_profile.instance_profile.name
   #security_groups = [aws_security_group.instance_security_group.name]
   vpc_security_group_ids = [aws_security_group.instance_security_group.id]
-  user_data = data.sh
+  #user_data = data.sh
 
   timeouts {
     create = "10m"
