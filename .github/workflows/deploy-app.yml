@@ -1,0 +1,65 @@
+#name: Deploy app
+#on: push
+#jobs:
+#  publish:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/checkout@v2
+#      - uses: osiegmar/s3-publish@v0
+#        with:
+#          args: --bucket=my_bucket dist
+#        env:
+#          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+#          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+#
+#
+#  - name: Deploy to AWS
+#    # You may pin to the exact commit or the version.
+#    # uses: ShauryaAg/AWS-Deploy-action@e9c91003120e064c89117c5f114eee08a895da12
+#    uses: ShauryaAg/AWS-Deploy-action@v1
+#    with:
+#      # Flag to get the env variables or not. Set `false` if ENV secrets should not be fetched
+#      get-env: # optional, default is true
+#      # Bucket where the ENV Secrets are stored
+#      env-bucket: # optional
+#      # AWS App Name
+#      aws-app-name: # optional
+#      # Bucket where the deployment is stored
+#      app-bucket: # optional
+#      # AWS App Group
+#      app-group: # optional
+#
+#
+#  - name: Sourcetoad - AWS CodeDeploy for GitHub Actions
+#    # You may pin to the exact commit or the version.
+#    # uses: sourcetoad/aws-codedeploy-action@0d44152a7073d8a249d9194d517ca16d06e0b6b5
+#    uses: sourcetoad/aws-codedeploy-action@v1.3.0
+#    with:
+#      # AWS Access Key (Required if no aws-actions/configure-aws-credentials)
+#      aws_access_key: # optional
+#      # AWS Secret Key (Required if no aws-actions/configure-aws-credentials)
+#      aws_secret_key: # optional
+#      # AWS Region
+#      aws_region: # optional, default is us-east-1
+#      # S3 Bucket for CodeDeploy Assets
+#      s3_bucket:
+#      # S3 Folder for ZIP.
+#      s3_folder:
+#      # Directory to be archived instead of entire workspace.
+#      directory: # optional
+#      # Zip to be used for deployment, instead of archiving a directory.
+#      archive: # optional
+#      # Custom flags to be passed to zip during archiving.
+#      custom_zip_flags: # optional
+#      # Files to be excluded during archiving (space delimited).
+#      excluded_files: # optional
+#      # AWS CodeDeploy Application Name
+#      codedeploy_name:
+#      # AWS CodeDeploy Application Group
+#      codedeploy_group:
+#      # Whether to register the deployment (vs automatic deploy).
+#      codedeploy_register_only: # optional, default is false
+#      # Max amount of iterations (15s increments) to wait for a deployment
+#      max_polling_iterations: # optional, default is 60
+#      # Whether to skip all AWS related steps.
+#      dry_run: # optional, default is false

@@ -1,0 +1,7 @@
+Steps:
+1. Terraform deploys infra
+2. GH Actions builds code/dependencies and sends to s3 bucket on push
+3. Deploy code on ec2 instance using CodeDeploy
+
+For next time:
+1. Test/Set up actions
