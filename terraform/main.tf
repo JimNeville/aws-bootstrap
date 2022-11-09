@@ -31,6 +31,14 @@ resource "aws_security_group" "instance_security_group" {
     cidr_blocks      = ["0.0.0.0/0"]
   }
 
+  egress {
+    from_port        = 0
+    to_port          = 0
+    protocol         = "-1"
+    cidr_blocks      = ["0.0.0.0/0"]
+    ipv6_cidr_blocks = ["::/0"]
+  }
+
   tags = {
     Name = var.project_name
   }
@@ -41,7 +49,7 @@ resource "aws_iam_role" "instance_role" {
 
   # Terraform's "jsonencode" function converts a
   # Terraform expression result to valid JSON syntax.
-  managed_policy_arns = ["arn:aws:iam::aws:policy/CloudWatchFullAccess"]
+  managed_policy_arns = ["arn:aws:iam::aws:policy/CloudWatchFullAccess", "arn:aws:iam::aws:policy/service-role/AWSCodeDeployRole"]
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
     Statement = [
@@ -72,7 +80,7 @@ resource "aws_instance" "app_server" {
   instance_type = "t2.micro"
   monitoring = true
   iam_instance_profile = aws_iam_instance_profile.instance_profile.name
-  #security_groups = [aws_security_group.instance_security_group.name]
+  security_groups = [aws_security_group.instance_security_group.name]
   vpc_security_group_ids = [aws_security_group.instance_security_group.id]
   #user_data = data.sh
 
