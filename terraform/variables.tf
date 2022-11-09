@@ -7,7 +7,8 @@ variable "project_name" {
 variable "instance_ami" {
   description = "AMI for EC2 instance"
   type        = string
-  default     = "ami-0cff7528ff583bf9a"
+  #default     = "ami-0cff7528ff583bf9a" #old
+  default     = "ami-026b57f3c383c2eec" # new - can be used with code deploy
 }
 
 variable "aws_region" {
