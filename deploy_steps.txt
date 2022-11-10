@@ -1,7 +1,6 @@
-Steps:
+Deploy Steps:
 1. Terraform deploys infra
-2. GH Actions builds code/dependencies and sends to s3 bucket on push
-3. Deploy code on ec2 instance using CodeDeploy
+2. Manually install Code deploy agent first time -> https://docs.aws.amazon.com/codedeploy/latest/userguide/codedeploy-agent-operations-install-linux.html
+3. GH Actions builds code/dependencies and sends to s3 bucket on push
+4. Deploy code on ec2 instance using CodeDeploy
 
-For next time:
-1. Test/Set up actions
